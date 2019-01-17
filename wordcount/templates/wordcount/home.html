@@ -1,0 +1,73 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>WordCounter</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <style>
+        a:link { color: white; text-decoration: none;}
+        a:visited { color: white; text-decoration: none;}
+        a:hover { color: black !important; text-decoration: none !important;}
+        .content{
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 5rem;
+            height: 23rem;
+            width: 20rem;
+            padding: 2rem;
+            border-radius: 1%;
+            border: 5px solid black;
+            background-color: grey;
+        }
+        textarea{
+            background-color: darkgreen !important;
+            font-weight: bold !important;
+            color: black !important;
+            border: 3px solid black !important;
+            height: 9rem;
+        }
+        #redbtn{
+            border: 3px solid black;
+            border-radius: 50%;
+            background-color: orangered;
+            width: 5rem ;
+            height: 5rem;
+            cursor: pointer;
+        }
+        #redbtn:hover{
+            background-color: red;
+        }
+        #aboutBtn{
+            border: 3px solid black;
+            border-radius: 1%;
+            background-color: lightblue;
+            width: 5rem;
+            height: 2rem;
+            text-align: center;
+            color: black;
+            position: relative;
+            left: 10rem;
+            top: -4rem;
+            cursor: pointer;
+        }
+        #aboutBtn:hover{
+            background-color: rgb(28, 94, 116);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="content">
+        <form action="{% url 'count' %}">
+            <textarea name="fulltext" class="form-control" id="" cols="10" rows="5"></textarea><br>
+            <input type="submit" id = redbtn value="Count!">
+        </form>
+        <div id = aboutBtn onclick="location='{% url 'about' %}'">ABOUT</div>
+        <div id = aboutBtn style="top: -3rem;" onclick="location='https://github.com/kjsu0209/DjangoLion.git'">GitHub</div>
+    </div>
+    
+</body>
+</html>
